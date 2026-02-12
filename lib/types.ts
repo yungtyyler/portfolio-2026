@@ -16,7 +16,13 @@ export interface Project {
   shortDescription: string;
   year: string;
   tech: string[];
+  role: string;
+  problem: string;
+  solution: string;
+  features: string[];
+  challenges: { title: string; description: string }[];
   link?: string;
+  github?: string;
   comingSoon?: boolean;
 }
 
