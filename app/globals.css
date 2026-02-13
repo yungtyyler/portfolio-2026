@@ -24,6 +24,8 @@
 @layer base {
   body {
     @apply bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary;
+    overflow-x: hidden;
+    width: 100%;
   }
 
   h1,
