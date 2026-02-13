@@ -17,6 +17,17 @@ export default function RootLayout({
   return (
     <html lang="en" className={GeistSans.className}>
       <body className="flex flex-col min-h-screen">
+        <div
+          className="fixed inset-0 z-[-1] pointer-events-none"
+          style={{
+            backgroundSize: "40px 40px",
+            backgroundImage:
+              "linear-gradient(to right, rgba(255, 255, 255, 0.01) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.01) 1px, transparent 1px)",
+            maskImage: "linear-gradient(to bottom, black 60%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to bottom, black 60%, transparent 100%)",
+          }}
+        />
+
         <Navbar />
         <main className="grow py-12">{children}</main>
         <footer className="py-8 border-t border-border/40 text-center text-sm text-subtle">
