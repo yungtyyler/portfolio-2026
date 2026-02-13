@@ -3,10 +3,18 @@ import "./globals.css";
 import { GeistSans } from "geist/font/sans";
 import Navbar from "@/components/layout/navbar";
 import Container from "@/components/layout/container";
+import { JsonLd } from "@/components/seo/json-ld";
+
+const BASE_ADDRESS = process.env.BASE_ADDRESS!;
 
 export const metadata: Metadata = {
-  title: "Tyler Varzeas | Full-Stack Engineer",
-  description: "Senior-focused Full-Stack Engineer based in Spokane, WA.",
+  metadataBase: new URL(BASE_ADDRESS),
+  title: {
+    default: "Tyler Varzeas | Full-Stack Engineer",
+    template: "%s | Tyler Varzeas",
+  },
+  description:
+    "Full-Stack Engineer based in Spokane, WA. Specializing in Next.js, TypeScript, and scalable architecture.",
 };
 
 export default function RootLayout({
@@ -28,6 +36,7 @@ export default function RootLayout({
           }}
         />
 
+        <JsonLd />
         <Navbar />
         <main className="grow py-12">{children}</main>
         <footer className="py-8 border-t border-border/40 text-center text-sm text-subtle">

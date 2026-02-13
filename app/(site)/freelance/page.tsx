@@ -1,5 +1,6 @@
 import Container from "@/components/layout/container";
 import FreelanceHero from "@/components/sections/freelance-hero";
+import Link from "next/link";
 import { FaCheckCircle, FaBolt, FaBrain, FaCodeBranch } from "react-icons/fa";
 
 export default function FreelancePage() {
@@ -70,9 +71,15 @@ export default function FreelancePage() {
 
           <div className="p-8 rounded-2xl bg-surface/30 border border-border text-center">
             <p className="text-lg font-medium text-foreground mb-2">
-              &quot;Tyler transformed how we track our inventory.&quot;
+              &quot;We are ABSOLUTELY pleased with the effort and dedication{" "}
+              <strong className="text-primary">Tyler</strong> has to bring our vision to life.&quot;
             </p>
-            <p className="text-sm text-subtle">— Dimas Co. Owners</p>
+            <Link
+              href="https://dimasco.org"
+              className="text-sm text-subtle hover:text-primary transition-colors duration-200"
+            >
+              — Dimas Co., Owners
+            </Link>
           </div>
         </div>
       </div>
