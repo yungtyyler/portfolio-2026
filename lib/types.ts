@@ -1,7 +1,8 @@
 import { cva, VariantProps } from "class-variance-authority";
+import type { ButtonHTMLAttributes, ReactNode } from "react";
 
 export interface ContainerProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
 }
 
@@ -24,6 +25,14 @@ export interface Project {
   link?: string;
   github?: string;
   comingSoon?: boolean;
+}
+
+export interface Service {
+  title: string;
+  description: string;
+  icon: ReactNode;
+  includes: string[];
+  bestFor: string;
 }
 
 export const buttonVariants = cva(
@@ -51,6 +60,6 @@ export const buttonVariants = cva(
 );
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
+  extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
   asChild?: boolean;
 }
