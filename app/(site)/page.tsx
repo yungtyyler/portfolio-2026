@@ -8,7 +8,9 @@ import { FaChartLine, FaGaugeHigh, FaLocationDot, FaMagnifyingGlassChart } from 
 import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, OG_IMAGE, SITE_NAME, absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: DEFAULT_TITLE,
+  title: {
+    absolute: DEFAULT_TITLE,
+  },
   description: DEFAULT_DESCRIPTION,
   alternates: {
     canonical: absoluteUrl(),
