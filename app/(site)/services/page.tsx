@@ -1,6 +1,8 @@
 import Container from "@/components/layout/container";
 import Button from "@/components/ui/button";
+import { OG_IMAGE, SITE_NAME, absoluteUrl } from "@/lib/seo";
 import type { Service } from "@/lib/types";
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   HiOutlinePaintBrush,
@@ -8,6 +10,32 @@ import {
   HiOutlineWrenchScrewdriver,
 } from "react-icons/hi2";
 import { FiTrendingUp, FiZap, FiBarChart2 } from "react-icons/fi";
+
+const title = "Website Design, Local SEO & Conversion Tracking Services";
+const description =
+  "Web design, technical SEO, local SEO, optimization, analytics, and conversion tracking services for Spokane-area businesses that want more qualified leads.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: {
+    canonical: absoluteUrl("/services"),
+  },
+  openGraph: {
+    title,
+    description,
+    url: absoluteUrl("/services"),
+    siteName: SITE_NAME,
+    type: "website",
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: [OG_IMAGE.url],
+  },
+};
 
 const SERVICES: Service[] = [
   {

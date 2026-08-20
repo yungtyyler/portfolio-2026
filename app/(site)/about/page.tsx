@@ -1,5 +1,33 @@
 import Container from "@/components/layout/container";
+import { OG_IMAGE, SITE_NAME, absoluteUrl } from "@/lib/seo";
+import type { Metadata } from "next";
 import { FaIdBadge } from "react-icons/fa6";
+
+const title = "About Tyler Varzeas";
+const description =
+  "Learn about Tyler Varzeas, a Spokane web developer and Digital Marketing Specialist - Web & Search at Horizon Credit Union focused on websites, SEO, analytics, and conversion.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: {
+    canonical: absoluteUrl("/about"),
+  },
+  openGraph: {
+    title,
+    description,
+    url: absoluteUrl("/about"),
+    siteName: SITE_NAME,
+    type: "profile",
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: [OG_IMAGE.url],
+  },
+};
 
 export default function AboutPage() {
   return (

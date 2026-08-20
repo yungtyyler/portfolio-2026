@@ -1,7 +1,35 @@
 import Container from "@/components/layout/container";
 import Button from "@/components/ui/button";
+import { OG_IMAGE, SITE_NAME, absoluteUrl } from "@/lib/seo";
+import type { Metadata } from "next";
 import { CgMail, CgPin } from "react-icons/cg";
 import { FaCheck } from "react-icons/fa6";
+
+const title = "Free Website Review";
+const description =
+  "Request a free website review from Tyler Varzeas Web + SEO. Get practical feedback on local SEO, speed, messaging, calls to action, analytics, and conversion tracking.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: {
+    canonical: absoluteUrl("/contact"),
+  },
+  openGraph: {
+    title,
+    description,
+    url: absoluteUrl("/contact"),
+    siteName: SITE_NAME,
+    type: "website",
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: [OG_IMAGE.url],
+  },
+};
 
 const reviewItems = [
   "What is blocking more calls, forms, or quote requests",

@@ -1,6 +1,8 @@
 import Container from "@/components/layout/container";
 import Button from "@/components/ui/button";
+import { OG_IMAGE, SITE_NAME, absoluteUrl } from "@/lib/seo";
 import { PROJECTS } from "@/lib/projects";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FaExternalLinkAlt } from "react-icons/fa";
@@ -16,6 +18,43 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const project = PROJECTS.find((project) => project.slug === slug);
+
+  if (!project) {
+    return {};
+  }
+
+  const title = `${project.title} Project`;
+  const description = `${project.title}: ${project.shortDescription} Built by Tyler Varzeas using ${project.tech.join(
+    ", "
+  )}.`;
+  const url = absoluteUrl(`/work/${project.slug}`);
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: SITE_NAME,
+      type: "article",
+      images: [OG_IMAGE],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [OG_IMAGE.url],
+    },
+  };
+}
+
 const WorkSlugPage = async ({ params }: PageProps) => {
   const { slug } = await params;
   const project = PROJECTS.find((project) => project.slug === slug);
@@ -24,8 +63,59 @@ const WorkSlugPage = async ({ params }: PageProps) => {
     notFound();
   }
 
+  const projectJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CreativeWork",
+        "@id": `${absoluteUrl(`/work/${project.slug}`)}#project`,
+        name: project.title,
+        url: absoluteUrl(`/work/${project.slug}`),
+        description: project.shortDescription,
+        creator: {
+          "@type": "Person",
+          name: "Tyler Varzeas",
+          url: absoluteUrl(),
+        },
+        dateCreated: project.year,
+        keywords: project.tech,
+        mainEntityOfPage: absoluteUrl(`/work/${project.slug}`),
+        sameAs: [project.github, project.link].filter(Boolean),
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${absoluteUrl(`/work/${project.slug}`)}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: absoluteUrl(),
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Work",
+            item: absoluteUrl("/work"),
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: project.title,
+            item: absoluteUrl(`/work/${project.slug}`),
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <Container>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(projectJsonLd) }}
+      />
+
       <Link
         href="/work"
         className="inline-flex items-center text-sm text-subtle hover:text-foreground transition-colors mb-8"

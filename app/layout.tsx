@@ -4,17 +4,58 @@ import { GeistSans } from "geist/font/sans";
 import Navbar from "@/components/layout/navbar";
 import Container from "@/components/layout/container";
 import { JsonLd } from "@/components/seo/json-ld";
-
-const BASE_ADDRESS = process.env.BASE_ADDRESS ?? "https://tylervarzeas.com";
+import {
+  DEFAULT_DESCRIPTION,
+  DEFAULT_TITLE,
+  OG_IMAGE,
+  SEO_KEYWORDS,
+  SITE_NAME,
+  SITE_URL,
+  absoluteUrl,
+} from "@/lib/seo";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(BASE_ADDRESS),
+  metadataBase: new URL(SITE_URL),
+  applicationName: SITE_NAME,
   title: {
-    default: "Tyler Varzeas Web + SEO | Spokane Website Design",
-    template: "%s | Tyler Varzeas",
+    default: DEFAULT_TITLE,
+    template: `%s | ${SITE_NAME}`,
   },
-  description:
-    "Spokane website design, technical SEO, local SEO, optimization, and conversion tracking for service businesses that want more leads from Google.",
+  description: DEFAULT_DESCRIPTION,
+  keywords: SEO_KEYWORDS,
+  authors: [{ name: "Tyler Varzeas", url: SITE_URL }],
+  creator: "Tyler Varzeas",
+  publisher: SITE_NAME,
+  alternates: {
+    canonical: absoluteUrl(),
+  },
+  category: "Web Design and SEO Services",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
+    images: [OG_IMAGE.url],
+  },
 };
 
 export default function RootLayout({

@@ -1,7 +1,35 @@
 import Container from "@/components/layout/container";
 import FreelanceHero from "@/components/sections/freelance-hero";
+import { OG_IMAGE, SITE_NAME, absoluteUrl } from "@/lib/seo";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { FaCheckCircle, FaBolt, FaChartLine, FaCodeBranch } from "react-icons/fa";
+
+const title = "Freelance Web & SEO Consulting";
+const description =
+  "Freelance web development, technical SEO, local SEO, optimization, and analytics support for Spokane and Coeur d'Alene businesses.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: {
+    canonical: absoluteUrl("/freelance"),
+  },
+  openGraph: {
+    title,
+    description,
+    url: absoluteUrl("/freelance"),
+    siteName: SITE_NAME,
+    type: "website",
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: [OG_IMAGE.url],
+  },
+};
 
 export default function FreelancePage() {
   return (

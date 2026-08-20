@@ -2,8 +2,32 @@ import Container from "@/components/layout/container";
 import Hero from "@/components/sections/hero";
 import SelectedWork from "@/components/sections/selected-work";
 import Button from "@/components/ui/button";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { FaChartLine, FaGaugeHigh, FaLocationDot, FaMagnifyingGlassChart } from "react-icons/fa6";
+import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, OG_IMAGE, SITE_NAME, absoluteUrl } from "@/lib/seo";
+
+export const metadata: Metadata = {
+  title: DEFAULT_TITLE,
+  description: DEFAULT_DESCRIPTION,
+  alternates: {
+    canonical: absoluteUrl(),
+  },
+  openGraph: {
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
+    url: absoluteUrl(),
+    siteName: SITE_NAME,
+    type: "website",
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
+    images: [OG_IMAGE.url],
+  },
+};
 
 const problems = [
   "Your site looks fine, but the phone is not ringing from Google.",
@@ -77,6 +101,11 @@ export default function Home() {
           <h2 className="mt-3 text-2xl font-semibold tracking-tight text-foreground">
             Focused help for the parts of your site that drive leads.
           </h2>
+          <p className="mt-4 text-sm leading-relaxed text-subtle">
+            Tyler Varzeas Web + SEO helps Spokane and Coeur d&apos;Alene service businesses with
+            website design, web development, technical SEO, local SEO, performance optimization,
+            GA4, Search Console, Tag Manager, and conversion tracking.
+          </p>
         </div>
 
         <div className="grid gap-5 md:grid-cols-2">
