@@ -13,6 +13,7 @@ import {
   SITE_URL,
   absoluteUrl,
 } from "@/lib/seo";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -79,7 +80,10 @@ export default function RootLayout({
 
         <JsonLd />
         <Navbar />
-        <main className="grow py-12">{children}</main>
+        <main className="grow py-12">
+          {children}
+          <Analytics />
+        </main>
         <footer className="py-8 border-t border-border/40 text-center text-sm text-subtle">
           <Container>
             &copy; {new Date().getFullYear()} Tyler Varzeas. Built with Next.js & Tailwind.
