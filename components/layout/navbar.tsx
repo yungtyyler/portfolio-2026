@@ -9,11 +9,10 @@ import Container from "@/components/layout/container";
 import Button from "../ui/button";
 
 const navItems = [
+  { name: "Services", href: "/services" },
   { name: "Work", href: "/work" },
   { name: "About", href: "/about" },
-  { name: "Freelance", href: "/freelance" },
-  { name: "Services", href: "/services" },
-  { name: "Contact", href: "/contact" },
+  { name: "Free Review", href: "/contact" },
 ];
 
 const Navbar = () => {
@@ -68,7 +67,7 @@ const Navbar = () => {
             size="icon"
             className="relative z-50 md:hidden"
             onClick={() => setIsOpen((prev) => !prev)}
-            aria-label="Toggle Menu"
+            aria-label="Toggle menu"
           >
             {isOpen ? <FaX className="h-5 w-5" /> : <FaBarsStaggered className="h-5 w-5" />}
           </Button>

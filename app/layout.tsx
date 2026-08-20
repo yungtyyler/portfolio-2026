@@ -5,16 +5,16 @@ import Navbar from "@/components/layout/navbar";
 import Container from "@/components/layout/container";
 import { JsonLd } from "@/components/seo/json-ld";
 
-const BASE_ADDRESS = process.env.BASE_ADDRESS!;
+const BASE_ADDRESS = process.env.BASE_ADDRESS ?? "https://tylervarzeas.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_ADDRESS),
   title: {
-    default: "Tyler Varzeas | Full-Stack Engineer",
+    default: "Tyler Varzeas Web + SEO | Spokane Website Design",
     template: "%s | Tyler Varzeas",
   },
   description:
-    "Full-Stack Engineer based in Spokane, WA. Specializing in Next.js, TypeScript, and scalable architecture.",
+    "Spokane website design, technical SEO, local SEO, optimization, and conversion tracking for service businesses that want more leads from Google.",
 };
 
 export default function RootLayout({

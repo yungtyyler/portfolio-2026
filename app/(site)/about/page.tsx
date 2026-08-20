@@ -7,30 +7,43 @@ export default function AboutPage() {
       <div className="grid md:grid-cols-[1.5fr_1fr] gap-12">
         {/* Left Column: Narrative */}
         <div className="space-y-8">
-          <h1 className="text-4xl font-bold tracking-tight">From the Lab to the Codebase.</h1>
+          <div>
+            <p className="text-sm font-medium uppercase text-primary">Why Tyler</p>
+            <h1 className="mt-3 text-4xl font-bold tracking-tight">
+              Web development discipline with SEO and marketing context.
+            </h1>
+          </div>
 
           <div className="prose prose-invert prose-neutral text-subtle leading-relaxed space-y-6">
             <p>
-              I didn&apos;t start as a software engineer. My background is in{" "}
-              <strong>Environmental Science</strong> and <strong>Education</strong>. I spent years
-              analyzing complex datasets in laboratories and breaking down difficult concepts for
-              students.
+              I&apos;m a Spokane-based web developer who cares about the full path from search to
+              lead. A fast, well-built website matters, but it also needs clear positioning, useful
+              service pages, local SEO signals, and tracking that shows what is actually working.
             </p>
             <p>
-              This non-traditional path shaped my engineering philosophy:{" "}
-              <strong>Context is everything.</strong>
+              I currently work as a{" "}
+              <strong>
+                Digital Marketing Specialist - Web &amp; Search at Horizon Credit Union
+              </strong>
+              , where my day-to-day work sits right at the intersection of websites, search
+              visibility, analytics, and digital marketing execution.
             </p>
             <p>
-              In the lab, a single data error could invalidate weeks of research. In software, I
-              apply that same rigor to
-              <strong> type safety, testing, and system architecture</strong>. As an educator, I
-              learned that the best solution is useless if people can&apos;t understand it. I build
-              systems that are not just performant for machines, but intuitive for humans.
+              My background in <strong>Environmental Science</strong> and <strong>Education</strong>{" "}
+              shaped how I work: understand the context, make the complex parts clear, and be
+              precise with the details. That carries into how I build websites, interpret data, and
+              explain tradeoffs to business owners.
             </p>
             <p>
-              Today, I specialize in the <strong>React ecosystem (Next.js)</strong>, focusing on
-              scalable frontend architecture and robust backend integrations. I thrive in
-              environments that value code quality, clear communication, and user-centric design.
+              Professionally, I work across modern web development and digital marketing: Next.js,
+              React, TypeScript, analytics, technical SEO, and conversion-focused page structure.
+              For small businesses, that mix is useful because the site has to function as both a
+              technical asset and a sales asset.
+            </p>
+            <p>
+              My goal with Tyler Varzeas Web + SEO is straightforward: help local service businesses
+              improve the parts of their website that make customers find them, trust them, and
+              contact them.
             </p>
           </div>
         </div>
@@ -44,7 +57,15 @@ export default function AboutPage() {
             <div className="space-y-4">
               <div>
                 <span className="text-xs font-medium text-subtle uppercase tracking-wider">
-                  Core
+                  Current Role
+                </span>
+                <p className="text-sm mt-1 text-foreground">
+                  Digital Marketing Specialist - Web &amp; Search, Horizon Credit Union
+                </p>
+              </div>
+              <div>
+                <span className="text-xs font-medium text-subtle uppercase tracking-wider">
+                  Web
                 </span>
                 <p className="text-sm mt-1 text-foreground">
                   TypeScript, React, Next.js 15, Node.js
@@ -58,15 +79,19 @@ export default function AboutPage() {
               </div>
               <div>
                 <span className="text-xs font-medium text-subtle uppercase tracking-wider">
-                  Database
+                  SEO & Analytics
                 </span>
-                <p className="text-sm mt-1 text-foreground">PostgreSQL, Prisma, Supabase, Redis</p>
+                <p className="text-sm mt-1 text-foreground">
+                  Technical SEO, Local SEO, GA4, Search Console, Tag Manager
+                </p>
               </div>
               <div>
                 <span className="text-xs font-medium text-subtle uppercase tracking-wider">
-                  DevOps
+                  Data & Infrastructure
                 </span>
-                <p className="text-sm mt-1 text-foreground">Vercel, Docker, Azure DevOps, CI/CD</p>
+                <p className="text-sm mt-1 text-foreground">
+                  PostgreSQL, Prisma, Supabase, Redis, Vercel, CI/CD
+                </p>
               </div>
             </div>
           </div>
@@ -92,7 +117,7 @@ export default function AboutPage() {
               </li>
               <li>
                 <a
-                  href="mailto:tylervarzeas@gmail.com"
+                  href="mailto:tyler.varzeas@gmail.com"
                   className="text-subtle hover:text-primary transition-colors block"
                 >
                   Email &rarr;

@@ -7,55 +7,67 @@ import {
   HiOutlineGlobeAlt,
   HiOutlineWrenchScrewdriver,
 } from "react-icons/hi2";
-import { FiTrendingUp, FiZap, FiCpu } from "react-icons/fi";
+import { FiTrendingUp, FiZap, FiBarChart2 } from "react-icons/fi";
 
 const SERVICES: Service[] = [
   {
-    title: "Website redesigns",
+    title: "Website design & development",
     description:
-      "Modernize an existing site so it feels trustworthy, loads quickly, and turns more visitors into leads.",
+      "Launch or rebuild a fast, trustworthy site that explains what you do, where you serve, and why customers should contact you.",
     icon: <HiOutlinePaintBrush />,
-    includes: ["UX audit", "Responsive rebuild", "Content and layout cleanup"],
-    bestFor: "Outdated sites that need a stronger first impression.",
+    includes: [
+      "Mobile-first page design",
+      "Service and location page structure",
+      "Clear contact paths",
+    ],
+    bestFor: "Local businesses with an outdated site or no dependable web presence.",
   },
   {
-    title: "New business websites",
+    title: "Technical SEO",
     description:
-      "Launch a polished web presence with the pages, structure, and messaging your customers need to take action.",
+      "Clean up the structure search engines rely on: metadata, headings, internal links, crawlability, indexability, and speed.",
     icon: <HiOutlineGlobeAlt />,
-    includes: ["Custom page design", "Mobile-first build", "Launch support"],
-    bestFor: "New brands, local businesses, and service providers.",
+    includes: ["SEO audit", "Metadata and schema cleanup", "Core Web Vitals improvements"],
+    bestFor: "Sites that are hard for Google to understand or slow for customers to use.",
   },
   {
-    title: "SEO optimization",
+    title: "Local SEO",
     description:
-      "Improve how your site is structured, written, and surfaced so search engines can understand it more clearly.",
+      "Build the local search foundation Spokane-area service businesses need to compete for qualified customers nearby.",
     icon: <FiTrendingUp />,
-    includes: ["Metadata cleanup", "Semantic page structure", "Local search basics"],
-    bestFor: "Sites that need more qualified organic traffic.",
+    includes: [
+      "Local keyword mapping",
+      "Service area messaging",
+      "Google Business Profile guidance",
+    ],
+    bestFor: "Businesses that want more calls, form fills, and map-pack visibility.",
   },
   {
-    title: "Speed optimization",
+    title: "Website optimization",
     description:
-      "Tighten the technical details that affect load time, responsiveness, and the overall feel of the experience.",
+      "Improve the pages you already have so more visitors understand the offer, trust the business, and take action.",
     icon: <FiZap />,
-    includes: ["Performance audit", "Asset optimization", "Core Web Vitals improvements"],
-    bestFor: "Slow sites losing visitors before they convert.",
+    includes: [
+      "UX and conversion review",
+      "CTA and form improvements",
+      "Content hierarchy cleanup",
+    ],
+    bestFor: "Sites getting traffic but not enough leads.",
   },
   {
-    title: "Automation integrations",
+    title: "Analytics & conversion tracking",
     description:
-      "Connect the tools you already use so repetitive tasks become reliable workflows instead of manual busywork.",
-    icon: <FiCpu />,
-    includes: ["Workflow mapping", "Form and CRM connections", "Admin-friendly handoff"],
-    bestFor: "Teams spending too much time moving data by hand.",
+      "Set up the measurement layer so you can see which pages, searches, forms, and calls are helping the business grow.",
+    icon: <FiBarChart2 />,
+    includes: ["GA4 and Search Console", "Tag Manager events", "Form and click tracking"],
+    bestFor: "Businesses making marketing decisions without clean data.",
   },
   {
-    title: "Maintenance retainers",
+    title: "Ongoing improvements",
     description:
-      "Keep your site healthy after launch with small improvements, technical fixes, and dependable support.",
+      "Keep your site healthy after launch with practical updates, technical fixes, content changes, and performance checks.",
     icon: <HiOutlineWrenchScrewdriver />,
-    includes: ["Priority updates", "Bug fixes", "Performance and content support"],
+    includes: ["Priority updates", "Bug fixes", "Content and SEO support"],
     bestFor: "Businesses that want a long-term technical partner.",
   },
 ];
@@ -64,20 +76,21 @@ const ServicesPage = () => {
   return (
     <Container>
       <div className="mb-12">
-        <h1 className="text-4xl font-bold tracking-tight mb-4">Services</h1>
+        <p className="text-sm font-medium uppercase text-primary">Services</p>
+        <h1 className="mt-3 text-4xl font-bold tracking-tight mb-4">
+          Web and SEO services for local lead generation.
+        </h1>
         <p className="text-lg text-subtle max-w-xl">
-          Practical web services for businesses that need a sharper site, a smoother workflow, or a
-          stronger foundation for growth.
+          Practical help for Spokane-area businesses that need a faster website, better local search
+          visibility, and clearer tracking from visitor to lead.
         </p>
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <Button asChild>
-            <Link href="/contact">Start a Project</Link>
+            <Link href="/contact">Get a Free Website Review</Link>
           </Button>
           <Button variant="outline" asChild>
-            <Link href="mailto:tyler.varzeas@gmail.com">
-              Email Me Directly
-            </Link>
+            <Link href="mailto:tyler.varzeas@gmail.com">Email Me Directly</Link>
           </Button>
         </div>
       </div>
@@ -119,17 +132,17 @@ const ServicesPage = () => {
           <div>
             <p className="text-sm font-medium uppercase text-primary">Need help choosing?</p>
             <h2 className="mt-3 text-2xl font-semibold tracking-tight text-foreground">
-              Tell me what is slowing your business down.
+              Start with a review, then fix the highest-impact issues first.
             </h2>
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-subtle">
-              Whether you need a better website, a faster workflow, or an honest technical opinion,
-              I can help you map the next step and decide what is worth building first.
+              You do not need a massive rebuild to begin. I can review your current site, identify
+              the biggest blockers, and recommend the smallest useful next step.
             </p>
           </div>
 
           <div className="flex flex-col gap-3 sm:flex-row md:flex-col">
             <Button asChild size="lg">
-              <Link href="/contact">Book a Consultation</Link>
+              <Link href="/contact">Request a Review</Link>
             </Button>
             <Button asChild variant="ghost">
               <Link href="/work">View My Work</Link>

@@ -1,7 +1,7 @@
 import Container from "@/components/layout/container";
 import FreelanceHero from "@/components/sections/freelance-hero";
 import Link from "next/link";
-import { FaCheckCircle, FaBolt, FaBrain, FaCodeBranch } from "react-icons/fa";
+import { FaCheckCircle, FaBolt, FaChartLine, FaCodeBranch } from "react-icons/fa";
 
 export default function FreelancePage() {
   return (
@@ -13,28 +13,28 @@ export default function FreelancePage() {
       <div id="services" className="grid md:grid-cols-3 gap-6 py-12">
         <div className="p-6 rounded-xl border border-border bg-surface/10 hover:border-primary/50 transition-colors">
           <FaCodeBranch className="w-10 h-10 text-primary mb-4" />
-          <h3 className="text-lg font-semibold mb-2">Web Development</h3>
+          <h3 className="text-lg font-semibold mb-2">Web Design & Development</h3>
           <p className="text-sm text-subtle leading-relaxed">
-            High-converting landing pages and marketing sites. Faster, cleaner, and more reliable
-            than WordPress or Squarespace.
+            Fast, modern websites with clear service pages, mobile-first layouts, and contact paths
+            built around lead generation.
           </p>
         </div>
 
         <div className="p-6 rounded-xl border border-border bg-surface/10 hover:border-primary/50 transition-colors">
           <FaBolt className="w-10 h-10 text-primary mb-4" />
-          <h3 className="text-lg font-semibold mb-2">Custom Applications</h3>
+          <h3 className="text-lg font-semibold mb-2">Technical & Local SEO</h3>
           <p className="text-sm text-subtle leading-relaxed">
-            Internal tools, client portals, and SaaS products. I build the software that runs your
-            specific business logic.
+            Technical cleanup, local search foundations, service-area messaging, and structure that
+            helps Google understand your business.
           </p>
         </div>
 
         <div className="p-6 rounded-xl border border-border bg-surface/10 hover:border-primary/50 transition-colors">
-          <FaBrain className="w-10 h-10 text-primary mb-4" />
-          <h3 className="text-lg font-semibold mb-2">Technical Strategy</h3>
+          <FaChartLine className="w-10 h-10 text-primary mb-4" />
+          <h3 className="text-lg font-semibold mb-2">Optimization & Tracking</h3>
           <p className="text-sm text-subtle leading-relaxed">
-            Not sure what you need? I act as a fractional CTO to help you choose the right tools and
-            avoid costly mistakes.
+            Speed, UX, analytics, and conversion tracking improvements so your website becomes a
+            measurable marketing asset.
           </p>
         </div>
       </div>
@@ -43,27 +43,27 @@ export default function FreelancePage() {
       <div className="py-16 border-t border-border/40">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-2xl font-bold mb-6">Why work with an Engineer?</h2>
+            <h2 className="text-2xl font-bold mb-6">Why work with Tyler?</h2>
             <div className="space-y-4">
               <div className="flex gap-3">
                 <FaCheckCircle className="w-5 h-5 text-primary shrink-0" />
                 <p className="text-sm text-subtle">
-                  <strong>No Templates:</strong> Everything is built to fit your specific needs, not
-                  shoehorned into a generic theme.
+                  <strong>Developer-level execution:</strong> Your site gets clean structure,
+                  performance, accessibility, and maintainable code.
                 </p>
               </div>
               <div className="flex gap-3">
                 <FaCheckCircle className="w-5 h-5 text-primary shrink-0" />
                 <p className="text-sm text-subtle">
-                  <strong>Performance First:</strong> Google ranks fast sites higher. I build for
-                  speed and SEO from day one.
+                  <strong>SEO-informed strategy:</strong> Pages are planned around how local
+                  customers search, compare, and choose.
                 </p>
               </div>
               <div className="flex gap-3">
                 <FaCheckCircle className="w-5 h-5 text-primary shrink-0" />
                 <p className="text-sm text-subtle">
-                  <strong>Long-term Support:</strong> I&apos;m a local partner, not a distant
-                  agency. I&apos;m here when you need updates.
+                  <strong>Local and practical:</strong> I&apos;m a Spokane partner focused on useful
+                  changes, clear communication, and measurable next steps.
                 </p>
               </div>
             </div>

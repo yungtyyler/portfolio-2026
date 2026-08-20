@@ -1,10 +1,10 @@
 import type { MetadataRoute } from "next";
 import { PROJECTS } from "@/lib/projects";
 
-const BASE_ADDRESS = process.env.BASE_ADDRESS;
+const BASE_ADDRESS = process.env.BASE_ADDRESS ?? "https://tylervarzeas.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ["", "/work", "/about", "/freelance", "/contact"].map((route) => ({
+  const routes = ["", "/services", "/work", "/about", "/freelance", "/contact"].map((route) => ({
     url: `${BASE_ADDRESS}${route}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,

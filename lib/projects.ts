@@ -2,6 +2,38 @@ import { Project } from "@/lib/types";
 
 export const PROJECTS: Project[] = [
   {
+    slug: "bingd",
+    title: "Bingd",
+    shortDescription: "Social discovery platform for media tracking.",
+    year: "2026",
+    role: "Lead Engineer",
+    tech: ["Next.js", "Supabase", "React Query", "TMDB API"],
+    github: "https://github.com/yungtyyler/bingd",
+    link: "https://getbingd.com/",
+    problem:
+      "Existing media trackers are solitary experiences. Users wanted a way to see what their friends are watching in real-time without the bloat of major social networks.",
+    solution:
+      "Bingd aggregates data from TMDB and combines it with a social graph. I used Supabase for real-time subscriptions to create a 'live feed' of friend activity.",
+    features: [
+      "Real-time activity feed using Supabase Realtime",
+      "Infinite scroll implementation with React Query",
+      "Complex caching strategy for external API rate limits",
+      "Dynamic OpenGraph image generation for shared reviews",
+    ],
+    challenges: [
+      {
+        title: "API Rate Limiting",
+        description:
+          "The TMDB API has strict limits. I implemented a server-side caching layer using Redis (via KV) to reduce external calls by 60%.",
+      },
+      {
+        title: "Optimistic Updates",
+        description:
+          "To make the app feel native, 'Like' and 'Watch' actions update the UI immediately while syncing in the background, handling rollbacks on failure.",
+      },
+    ],
+  },
+  {
     slug: "limsly",
     title: "LIMSly",
     shortDescription: "Enterprise-grade Laboratory Information Management System.",
@@ -30,39 +62,6 @@ export const PROJECTS: Project[] = [
         title: "Audit Logging",
         description:
           "Implemented a middleware-based logging system to track every mutation for compliance purposes without cluttering the business logic.",
-      },
-    ],
-  },
-  {
-    slug: "bingd",
-    title: "Bingd",
-    shortDescription: "Social discovery platform for media tracking.",
-    year: "2026",
-    role: "Lead Engineer",
-    tech: ["Next.js", "Supabase", "React Query", "TMDB API"],
-    github: "https://github.com/yungtyyler/bingd",
-    link: "https://getbingd.com/",
-    comingSoon: true,
-    problem:
-      "Existing media trackers are solitary experiences. Users wanted a way to see what their friends are watching in real-time without the bloat of major social networks.",
-    solution:
-      "Bingd aggregates data from TMDB and combines it with a social graph. I used Supabase for real-time subscriptions to create a 'live feed' of friend activity.",
-    features: [
-      "Real-time activity feed using Supabase Realtime",
-      "Infinite scroll implementation with React Query",
-      "Complex caching strategy for external API rate limits",
-      "Dynamic OpenGraph image generation for shared reviews",
-    ],
-    challenges: [
-      {
-        title: "API Rate Limiting",
-        description:
-          "The TMDB API has strict limits. I implemented a server-side caching layer using Redis (via KV) to reduce external calls by 60%.",
-      },
-      {
-        title: "Optimistic Updates",
-        description:
-          "To make the app feel native, 'Like' and 'Watch' actions update the UI immediately while syncing in the background, handling rollbacks on failure.",
       },
     ],
   },

@@ -4,7 +4,11 @@ export function JsonLd() {
     "@type": "Person",
     name: "Tyler Varzeas",
     url: "https://tylervarzeas.com",
-    jobTitle: "Full-Stack Software Engineer",
+    jobTitle: "Digital Marketing Specialist - Web & Search",
+    worksFor: {
+      "@type": "Organization",
+      name: "Horizon Credit Union",
+    },
     address: {
       "@type": "PostalAddress",
       addressLocality: "Spokane",
@@ -12,7 +16,16 @@ export function JsonLd() {
       addressCountry: "US",
     },
     sameAs: ["https://github.com/yungtyyler", "https://linkedin.com/in/tyler-varzeas"],
-    knowsAbout: ["Next.js", "React", "TypeScript", "System Architecture", "PostgreSQL"],
+    knowsAbout: [
+      "Website Design",
+      "Web Development",
+      "Technical SEO",
+      "Local SEO",
+      "Conversion Tracking",
+      "Next.js",
+      "React",
+      "TypeScript",
+    ],
   };
 
   return (
