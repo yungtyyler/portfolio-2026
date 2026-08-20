@@ -41,7 +41,7 @@ export const PROJECTS: Project[] = [
     role: "Lead Engineer",
     tech: ["Next.js", "Supabase", "React Query", "TMDB API"],
     github: "https://github.com/yungtyyler/bingd",
-    link: "https://bingd.vercel.app/",
+    link: "https://getbingd.com/",
     comingSoon: true,
     problem:
       "Existing media trackers are solitary experiences. Users wanted a way to see what their friends are watching in real-time without the bloat of major social networks.",
