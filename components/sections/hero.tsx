@@ -22,7 +22,7 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
           <Button asChild size="lg" className="w-full sm:w-auto">
             <Link href="/contact">
-              Get a Free Website Review
+              Start a Project
               <FaArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>

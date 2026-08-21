@@ -171,18 +171,18 @@ export default function Home() {
       <section className="py-16 border-t border-border/40 mt-16">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div>
-            <p className="text-sm font-medium uppercase text-primary">Free Review</p>
+            <p className="text-sm font-medium uppercase text-primary">Start a Project</p>
             <h3 className="mt-2 text-2xl font-semibold tracking-tight text-foreground">
-              Want to know why your website is not bringing in more leads?
+              Need a website or a better path to more leads?
             </h3>
             <p className="text-subtle text-sm mt-3 max-w-xl leading-relaxed">
-              Send me your website and I&apos;ll look for quick wins across speed, local SEO,
-              messaging, calls to action, and tracking.
+              Tell me what you are trying to build or improve, and I&apos;ll help you figure out
+              the most practical next step.
             </p>
           </div>
 
           <Button asChild size="lg" className="w-full sm:w-auto">
-            <Link href="/contact">Request a Free Review</Link>
+            <Link href="/contact">Start a Project</Link>
           </Button>
         </div>
       </section>

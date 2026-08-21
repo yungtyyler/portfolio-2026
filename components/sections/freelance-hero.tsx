@@ -15,7 +15,7 @@ const FreelanceHero = () => {
 
       <div className="pt-8 flex justify-center">
         <Button size="lg" className="h-12 px-8 text-base" asChild>
-          <Link href="/contact">Get a Free Website Review</Link>
+          <Link href="/contact">Start a Project</Link>
         </Button>
       </div>
     </div>
