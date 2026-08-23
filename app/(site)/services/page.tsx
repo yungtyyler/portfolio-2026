@@ -10,6 +10,7 @@ import {
   HiOutlineWrenchScrewdriver,
 } from "react-icons/hi2";
 import { FiTrendingUp, FiZap, FiBarChart2 } from "react-icons/fi";
+import { FaCheck } from "react-icons/fa6";
 
 const title = "Website Design, Local SEO & Conversion Tracking Services";
 const description =
@@ -100,6 +101,54 @@ const SERVICES: Service[] = [
   },
 ];
 
+const OFFERS = [
+  {
+    title: "Website Tune-Up",
+    price: "Starting at $750",
+    bestFor: "For businesses with an existing site that should be generating more leads.",
+    summary:
+      "A focused improvement sprint for the site you already have, built around the issues most likely to affect search visibility and inquiries.",
+    includes: [
+      "Technical SEO cleanup",
+      "Speed and performance improvements",
+      "Messaging and CTA refinements",
+      "Analytics and tracking checks",
+      "Local SEO quick wins",
+    ],
+    cta: "Get a Free Website Review",
+  },
+  {
+    title: "Lead Generation Website",
+    price: "Starting at $1,500",
+    bestFor: "For businesses that need a new site or a major rebuild.",
+    summary:
+      "A modern website planned around your services, local search visibility, trust, and turning visitors into qualified inquiries.",
+    includes: [
+      "Custom modern website",
+      "Mobile-first design",
+      "Service pages and local SEO structure",
+      "Contact or quote form",
+      "Analytics and basic conversion tracking",
+    ],
+    cta: "Talk About Your Website",
+  },
+  {
+    title: "Website + SEO Care",
+    price: "$299/month",
+    bestFor: "For businesses that want ongoing support after launch.",
+    summary:
+      "Steady help keeping your website healthy, improving what matters, and making sure you know what to work on next.",
+    includes: [
+      "Website maintenance",
+      "SEO monitoring",
+      "Small content and page updates",
+      "Analytics and Search Console review",
+      "Technical fixes and monthly recommendations",
+    ],
+    cta: "Ask About Ongoing Care",
+  },
+];
+
 const ServicesPage = () => {
   return (
     <Container>
@@ -122,6 +171,53 @@ const ServicesPage = () => {
           </Button>
         </div>
       </div>
+
+      <section className="mb-16 border-y border-border/60 py-12">
+        <div className="mb-8 max-w-2xl">
+          <p className="text-sm font-medium uppercase text-primary">Ways to Work Together</p>
+          <h2 className="mt-3 text-2xl font-semibold tracking-tight text-foreground">
+            Clear starting points, without making you decode a giant pricing table.
+          </h2>
+          <p className="mt-4 text-sm leading-relaxed text-subtle">
+            Most projects start in one of three places: improving the site you have, replacing what
+            is not working, or keeping momentum after launch. I&apos;ll help you choose the smallest
+            useful next step before we talk scope.
+          </p>
+        </div>
+
+        <ul className="grid gap-5 lg:grid-cols-3">
+          {OFFERS.map((offer) => (
+            <li key={offer.title}>
+              <article className="flex h-full flex-col rounded-lg border border-border bg-surface/20 p-6 transition-colors hover:border-primary/50 hover:bg-surface/30">
+                <div>
+                  <p className="text-xs font-medium uppercase text-subtle">{offer.bestFor}</p>
+                  <h3 className="mt-4 text-xl font-semibold text-foreground">{offer.title}</h3>
+                  <p className="mt-3 text-2xl font-bold tracking-tight text-primary">
+                    {offer.price}
+                  </p>
+                  <p className="mt-4 text-sm leading-relaxed text-subtle">{offer.summary}</p>
+                </div>
+
+                <ul className="mt-6 space-y-3">
+                  {offer.includes.map((item) => (
+                    <li key={item} className="flex gap-3 text-sm leading-relaxed text-foreground">
+                      <FaCheck className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <Button
+                  asChild
+                  className="mt-7 h-auto min-h-11 w-full whitespace-normal px-4 py-3 text-center leading-snug"
+                >
+                  <Link href="/contact">{offer.cta}</Link>
+                </Button>
+              </article>
+            </li>
+          ))}
+        </ul>
+      </section>
 
       <ul className="grid gap-5 md:grid-cols-2">
         {SERVICES.map((service) => (
