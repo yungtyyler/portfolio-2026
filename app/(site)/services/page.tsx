@@ -219,6 +219,30 @@ const ServicesPage = () => {
         </ul>
       </section>
 
+      <section className="mb-16 border-b border-border/60 pb-12">
+        <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
+          <div>
+            <p className="text-sm font-medium uppercase text-primary">Need help choosing?</p>
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-foreground">
+              Start with a review, then fix the highest-impact issues first.
+            </h2>
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-subtle">
+              You do not need a massive rebuild to begin. I can review your current site, identify
+              the biggest blockers, and recommend the smallest useful next step.
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-3 sm:flex-row md:flex-col">
+            <Button asChild size="lg">
+              <Link href="/contact">Request a Review</Link>
+            </Button>
+            <Button asChild variant="ghost">
+              <Link href="/work">View My Work</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       <ul className="grid gap-5 md:grid-cols-2">
         {SERVICES.map((service) => (
           <li key={service.title}>
@@ -250,30 +274,6 @@ const ServicesPage = () => {
           </li>
         ))}
       </ul>
-
-      <section className="mt-16 border-y border-border/60 py-12">
-        <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
-          <div>
-            <p className="text-sm font-medium uppercase text-primary">Need help choosing?</p>
-            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-foreground">
-              Start with a review, then fix the highest-impact issues first.
-            </h2>
-            <p className="mt-4 max-w-xl text-sm leading-relaxed text-subtle">
-              You do not need a massive rebuild to begin. I can review your current site, identify
-              the biggest blockers, and recommend the smallest useful next step.
-            </p>
-          </div>
-
-          <div className="flex flex-col gap-3 sm:flex-row md:flex-col">
-            <Button asChild size="lg">
-              <Link href="/contact">Request a Review</Link>
-            </Button>
-            <Button asChild variant="ghost">
-              <Link href="/work">View My Work</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
     </Container>
   );
 };
