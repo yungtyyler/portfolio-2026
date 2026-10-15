@@ -1,62 +1,151 @@
 import Container from "@/components/layout/container";
 import Button from "@/components/ui/button";
+import { OG_IMAGE, SITE_NAME, absoluteUrl } from "@/lib/seo";
 import type { Service } from "@/lib/types";
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   HiOutlinePaintBrush,
   HiOutlineGlobeAlt,
   HiOutlineWrenchScrewdriver,
 } from "react-icons/hi2";
-import { FiTrendingUp, FiZap, FiCpu } from "react-icons/fi";
+import { FiTrendingUp, FiZap, FiBarChart2 } from "react-icons/fi";
+import { FaCheck } from "react-icons/fa6";
+
+const title = "Website Design, Local SEO & Conversion Tracking Services";
+const description =
+  "Web design, technical SEO, local SEO, optimization, analytics, and conversion tracking services for Spokane-area businesses that want more qualified leads.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: {
+    canonical: absoluteUrl("/services"),
+  },
+  openGraph: {
+    title,
+    description,
+    url: absoluteUrl("/services"),
+    siteName: SITE_NAME,
+    type: "website",
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: [OG_IMAGE.url],
+  },
+};
 
 const SERVICES: Service[] = [
   {
-    title: "Website redesigns",
+    title: "Website design & development",
     description:
-      "Modernize an existing site so it feels trustworthy, loads quickly, and turns more visitors into leads.",
+      "Launch or rebuild a fast, trustworthy site that explains what you do, where you serve, and why customers should contact you.",
     icon: <HiOutlinePaintBrush />,
-    includes: ["UX audit", "Responsive rebuild", "Content and layout cleanup"],
-    bestFor: "Outdated sites that need a stronger first impression.",
+    includes: [
+      "Mobile-first page design",
+      "Service and location page structure",
+      "Clear contact paths",
+    ],
+    bestFor: "Local businesses with an outdated site or no dependable web presence.",
   },
   {
-    title: "New business websites",
+    title: "Technical SEO",
     description:
-      "Launch a polished web presence with the pages, structure, and messaging your customers need to take action.",
+      "Clean up the structure search engines rely on: metadata, headings, internal links, crawlability, indexability, and speed.",
     icon: <HiOutlineGlobeAlt />,
-    includes: ["Custom page design", "Mobile-first build", "Launch support"],
-    bestFor: "New brands, local businesses, and service providers.",
+    includes: ["SEO audit", "Metadata and schema cleanup", "Core Web Vitals improvements"],
+    bestFor: "Sites that are hard for Google to understand or slow for customers to use.",
   },
   {
-    title: "SEO optimization",
+    title: "Local SEO",
     description:
-      "Improve how your site is structured, written, and surfaced so search engines can understand it more clearly.",
+      "Build the local search foundation Spokane-area service businesses need to compete for qualified customers nearby.",
     icon: <FiTrendingUp />,
-    includes: ["Metadata cleanup", "Semantic page structure", "Local search basics"],
-    bestFor: "Sites that need more qualified organic traffic.",
+    includes: [
+      "Local keyword mapping",
+      "Service area messaging",
+      "Google Business Profile guidance",
+    ],
+    bestFor: "Businesses that want more calls, form fills, and map-pack visibility.",
   },
   {
-    title: "Speed optimization",
+    title: "Website optimization",
     description:
-      "Tighten the technical details that affect load time, responsiveness, and the overall feel of the experience.",
+      "Improve the pages you already have so more visitors understand the offer, trust the business, and take action.",
     icon: <FiZap />,
-    includes: ["Performance audit", "Asset optimization", "Core Web Vitals improvements"],
-    bestFor: "Slow sites losing visitors before they convert.",
+    includes: [
+      "UX and conversion review",
+      "CTA and form improvements",
+      "Content hierarchy cleanup",
+    ],
+    bestFor: "Sites getting traffic but not enough leads.",
   },
   {
-    title: "Automation integrations",
+    title: "Analytics & conversion tracking",
     description:
-      "Connect the tools you already use so repetitive tasks become reliable workflows instead of manual busywork.",
-    icon: <FiCpu />,
-    includes: ["Workflow mapping", "Form and CRM connections", "Admin-friendly handoff"],
-    bestFor: "Teams spending too much time moving data by hand.",
+      "Set up the measurement layer so you can see which pages, searches, forms, and calls are helping the business grow.",
+    icon: <FiBarChart2 />,
+    includes: ["GA4 and Search Console", "Tag Manager events", "Form and click tracking"],
+    bestFor: "Businesses making marketing decisions without clean data.",
   },
   {
-    title: "Maintenance retainers",
+    title: "Ongoing improvements",
     description:
-      "Keep your site healthy after launch with small improvements, technical fixes, and dependable support.",
+      "Keep your site healthy after launch with practical updates, technical fixes, content changes, and performance checks.",
     icon: <HiOutlineWrenchScrewdriver />,
-    includes: ["Priority updates", "Bug fixes", "Performance and content support"],
+    includes: ["Priority updates", "Bug fixes", "Content and SEO support"],
     bestFor: "Businesses that want a long-term technical partner.",
+  },
+];
+
+const OFFERS = [
+  {
+    title: "Website Tune-Up",
+    price: "Starting at $750",
+    bestFor: "For businesses with an existing site that should be generating more leads.",
+    summary:
+      "A focused improvement sprint for the site you already have, built around the issues most likely to affect search visibility and inquiries.",
+    includes: [
+      "Technical SEO cleanup",
+      "Speed and performance improvements",
+      "Messaging and CTA refinements",
+      "Analytics and tracking checks",
+      "Local SEO quick wins",
+    ],
+    cta: "Get a Free Website Review",
+  },
+  {
+    title: "Lead Generation Website",
+    price: "Starting at $1,500",
+    bestFor: "For businesses that need a new site or a major rebuild.",
+    summary:
+      "A modern website planned around your services, local search visibility, trust, and turning visitors into qualified inquiries.",
+    includes: [
+      "Custom modern website",
+      "Mobile-first design",
+      "Service pages and local SEO structure",
+      "Contact or quote form",
+      "Analytics and basic conversion tracking",
+    ],
+    cta: "Talk About Your Website",
+  },
+  {
+    title: "Website + SEO Care",
+    price: "$299/month",
+    bestFor: "For businesses that want ongoing support after launch.",
+    summary:
+      "Steady help keeping your website healthy, improving what matters, and making sure you know what to work on next.",
+    includes: [
+      "Website maintenance",
+      "SEO monitoring",
+      "Small content and page updates",
+      "Analytics and Search Console review",
+      "Technical fixes and monthly recommendations",
+    ],
+    cta: "Ask About Ongoing Care",
   },
 ];
 
@@ -64,10 +153,13 @@ const ServicesPage = () => {
   return (
     <Container>
       <div className="mb-12">
-        <h1 className="text-4xl font-bold tracking-tight mb-4">Services</h1>
+        <p className="text-sm font-medium uppercase text-primary">Services</p>
+        <h1 className="mt-3 text-4xl font-bold tracking-tight mb-4">
+          Web and SEO services for local lead generation.
+        </h1>
         <p className="text-lg text-subtle max-w-xl">
-          Practical web services for businesses that need a sharper site, a smoother workflow, or a
-          stronger foundation for growth.
+          Practical help for Spokane-area businesses that need a faster website, better local search
+          visibility, and clearer tracking from visitor to lead.
         </p>
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -75,12 +167,81 @@ const ServicesPage = () => {
             <Link href="/contact">Start a Project</Link>
           </Button>
           <Button variant="outline" asChild>
-            <Link href="mailto:tyler.varzeas@gmail.com">
-              Email Me Directly
-            </Link>
+            <Link href="mailto:tyler.varzeas@gmail.com">Email Me Directly</Link>
           </Button>
         </div>
       </div>
+
+      <section className="mb-16 border-y border-border/60 py-12">
+        <div className="mb-8 max-w-2xl">
+          <p className="text-sm font-medium uppercase text-primary">Ways to Work Together</p>
+          <h2 className="mt-3 text-2xl font-semibold tracking-tight text-foreground">
+            Clear starting points, without making you decode a giant pricing table.
+          </h2>
+          <p className="mt-4 text-sm leading-relaxed text-subtle">
+            Most projects start in one of three places: improving the site you have, replacing what
+            is not working, or keeping momentum after launch. I&apos;ll help you choose the smallest
+            useful next step before we talk scope.
+          </p>
+        </div>
+
+        <ul className="grid gap-5 lg:grid-cols-3">
+          {OFFERS.map((offer) => (
+            <li key={offer.title}>
+              <article className="flex h-full flex-col rounded-lg border border-border bg-surface/20 p-6 transition-colors hover:border-primary/50 hover:bg-surface/30">
+                <div>
+                  <p className="text-xs font-medium uppercase text-subtle">{offer.bestFor}</p>
+                  <h3 className="mt-4 text-xl font-semibold text-foreground">{offer.title}</h3>
+                  <p className="mt-3 text-2xl font-bold tracking-tight text-primary">
+                    {offer.price}
+                  </p>
+                  <p className="mt-4 text-sm leading-relaxed text-subtle">{offer.summary}</p>
+                </div>
+
+                <ul className="mt-6 space-y-3">
+                  {offer.includes.map((item) => (
+                    <li key={item} className="flex gap-3 text-sm leading-relaxed text-foreground">
+                      <FaCheck className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <Button
+                  asChild
+                  className="mt-7 h-auto min-h-11 w-full whitespace-normal px-4 py-3 text-center leading-snug"
+                >
+                  <Link href="/contact">{offer.cta}</Link>
+                </Button>
+              </article>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="mb-16 border-b border-border/60 pb-12">
+        <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
+          <div>
+            <p className="text-sm font-medium uppercase text-primary">Need help choosing?</p>
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-foreground">
+              Start with a review, then fix the highest-impact issues first.
+            </h2>
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-subtle">
+              You do not need a massive rebuild to begin. I can review your current site, identify
+              the biggest blockers, and recommend the smallest useful next step.
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-3 sm:flex-row md:flex-col">
+            <Button asChild size="lg">
+              <Link href="/contact">Request a Review</Link>
+            </Button>
+            <Button asChild variant="ghost">
+              <Link href="/work">View My Work</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
 
       <ul className="grid gap-5 md:grid-cols-2">
         {SERVICES.map((service) => (
@@ -113,30 +274,6 @@ const ServicesPage = () => {
           </li>
         ))}
       </ul>
-
-      <section className="mt-16 border-y border-border/60 py-12">
-        <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
-          <div>
-            <p className="text-sm font-medium uppercase text-primary">Need help choosing?</p>
-            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-foreground">
-              Tell me what is slowing your business down.
-            </h2>
-            <p className="mt-4 max-w-xl text-sm leading-relaxed text-subtle">
-              Whether you need a better website, a faster workflow, or an honest technical opinion,
-              I can help you map the next step and decide what is worth building first.
-            </p>
-          </div>
-
-          <div className="flex flex-col gap-3 sm:flex-row md:flex-col">
-            <Button asChild size="lg">
-              <Link href="/contact">Book a Consultation</Link>
-            </Button>
-            <Button asChild variant="ghost">
-              <Link href="/work">View My Work</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
     </Container>
   );
 };

@@ -6,7 +6,10 @@ const SelectedWork = () => {
   return (
     <section className="py-12 border-t border-border/40">
       <div className="flex flex-wrap items-baseline justify-between gap-4 mb-8">
-        <h2 className="text-2xl font-semibold tracking-tight">Selected Work</h2>
+        <div>
+          <p className="text-sm font-medium uppercase text-primary">Proof of Craft</p>
+          <h2 className="mt-2 text-2xl font-semibold tracking-tight">Selected Work</h2>
+        </div>
         <Link
           href="/work"
           className="text-sm text-subtle hover:text-foreground transition-colors flex items-center"

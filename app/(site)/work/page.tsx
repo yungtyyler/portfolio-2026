@@ -1,7 +1,35 @@
 import Container from "@/components/layout/container";
+import { OG_IMAGE, SITE_NAME, absoluteUrl } from "@/lib/seo";
 import { PROJECTS } from "@/lib/projects";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { FaSquareArrowUpRight } from "react-icons/fa6";
+
+const title = "Selected Web Development Work";
+const description =
+  "Selected projects by Tyler Varzeas, including Bingd, LIMSly, and Prophet. Work across Next.js, TypeScript, Supabase, PostgreSQL, analytics, and full-stack product development.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: {
+    canonical: absoluteUrl("/work"),
+  },
+  openGraph: {
+    title,
+    description,
+    url: absoluteUrl("/work"),
+    siteName: SITE_NAME,
+    type: "website",
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: [OG_IMAGE.url],
+  },
+};
 
 export default function WorkPage() {
   return (
