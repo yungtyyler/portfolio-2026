@@ -14,6 +14,7 @@ import {
   absoluteUrl,
 } from "@/lib/seo";
 import { Analytics } from "@vercel/analytics/next";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -66,6 +67,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={GeistSans.className}>
+      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID ?? ""} />
       <body className="flex flex-col min-h-screen">
         <div
           className="fixed inset-0 z-[-1] pointer-events-none"
