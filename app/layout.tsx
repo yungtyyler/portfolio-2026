@@ -15,6 +15,7 @@ import {
 } from "@/lib/seo";
 import { Analytics } from "@vercel/analytics/next";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -87,8 +88,17 @@ export default function RootLayout({
           <Analytics />
         </main>
         <footer className="py-8 border-t border-border/40 text-center text-sm text-subtle">
-          <Container>
-            &copy; {new Date().getFullYear()} Tyler Varzeas. Built with Next.js & Tailwind.
+          <Container className="flex items-center justify-center gap-2">
+            <p>&copy; {new Date().getFullYear()} Tyler Varzeas. Built with Next.js & Tailwind.</p>
+            <span>|</span>
+            <Link
+              href="/privacy"
+              className={
+                "text-sm transition-colors duration-200 hover:text-neutral-100 text-neutral-400"
+              }
+            >
+              Privacy Policy
+            </Link>
           </Container>
         </footer>
       </body>
