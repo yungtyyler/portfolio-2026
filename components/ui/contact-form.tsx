@@ -128,7 +128,11 @@ export default function ContactForm() {
             </option>
           ))}
         </select>
-        <ValidationError field="goal" errors={state.errors} className="block text-xs text-red-300" />
+        <ValidationError
+          field="goal"
+          errors={state.errors}
+          className="block text-xs text-red-300"
+        />
       </label>
 
       <label className="mt-4 block space-y-2 text-sm font-medium text-foreground">
@@ -150,7 +154,11 @@ export default function ContactForm() {
       <input name="_gotcha" tabIndex={-1} autoComplete="off" className="hidden" />
 
       <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
-        <Button type="submit" disabled={state.submitting} className="w-full sm:w-auto">
+        <Button
+          type="submit"
+          disabled={state.submitting}
+          className="w-full sm:w-auto cursor-pointer"
+        >
           {state.submitting ? "Sending..." : "Send Project Inquiry"}
         </Button>
         <ValidationError errors={state.errors} className="text-sm text-red-300" />

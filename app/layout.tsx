@@ -14,7 +14,7 @@ import {
   absoluteUrl,
 } from "@/lib/seo";
 import { Analytics } from "@vercel/analytics/next";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -68,7 +68,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={GeistSans.className}>
-      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA4_ID ?? ""} />
+      {/* <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA4_ID ?? ""} /> */}
+      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID ?? ""} />
       <body className="flex flex-col min-h-screen">
         <div
           className="fixed inset-0 z-[-1] pointer-events-none"
