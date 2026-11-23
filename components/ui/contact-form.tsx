@@ -2,6 +2,7 @@
 
 import Button from "@/components/ui/button";
 import { useForm, ValidationError } from "@formspree/react";
+import { sendGTMEvent } from "@next/third-parties/google";
 
 const goals = [
   "A new custom website",
@@ -157,6 +158,13 @@ export default function ContactForm() {
         <Button
           type="submit"
           disabled={state.submitting}
+          onClick={() =>
+            sendGTMEvent({
+              event: "form_submission",
+              form_name: "contact_us",
+              lead_type: "general_inquiry",
+            })
+          }
           className="w-full sm:w-auto cursor-pointer"
         >
           {state.submitting ? "Sending..." : "Send Project Inquiry"}
